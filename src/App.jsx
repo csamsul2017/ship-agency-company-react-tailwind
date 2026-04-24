@@ -109,7 +109,7 @@ function App() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-20 md:py-24 bg-white relative">
+      <section id="about" className="py-20 md:py-24 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
@@ -138,7 +138,7 @@ function App() {
             </div>
             <div className="relative mt-8 md:mt-0">
               <div className="absolute -inset-4 bg-primary-100 rounded-3xl transform rotate-3"></div>
-              <div className="absolute -inset-4 bg-accent-100 rounded-3xl transform -rotate-3"></div>
+              <div className="absolute -inset-4 bg-[#115e59] rounded-3xl transform -rotate-3"></div>
               <div className="relative bg-primary-900 rounded-3xl p-8 md:p-10 text-white shadow-2xl">
                 <h3 className="text-2xl font-bold mb-6">Our Core Strengths</h3>
                 <div className="space-y-6">
