@@ -19,6 +19,19 @@ import {
 } from 'lucide-react';
 import './App.css';
 
+const vesselList = [
+  'TB. ABADI SAKTI II', 'LCT. ADINDA FADILLA', 'LCT. ANDROS', 'LCT. AYU 138',
+  'LCT. AYU 168', 'LCT. AYU 178', 'LCT. AYU 188', 'LCT. AYU 208',
+  'LCT. AYU 28', 'LCT. AYU 48', 'LCT. AYU 58', 'LCT. AYU 7',
+  'LCT. AYU 8', 'LCT. AYU 88', 'LCT. AYU EXPRESS 1', 'LCT. AYU EXPRESS 2',
+  'LCT. BERLY', 'LCT. BINTANG SAMUDRA 2', 'LCT. BINTANG SAMUDRA 8', 'LCT. CIPTA HARAPAN IX',
+  'DRAKO 2302 TONGKANG / BARGE', 'TB. DRAKO ENTERPRISE', 'LCT. EL NINA SAMUDRA 23', 'TB. ESCOOP GREEN LINE 02',
+  'TB. ESCOOPG 02', 'LCT. HARAPAN PERDANA 99', 'LCT. KARYA MANDIRI 89', 'LCT. MUARA KENCANA INDAH',
+  'LCT. PUTRA BAWEAN 01', 'LCT. PUTRA JAYA', 'LCT. SAMUDERA RAHAYU I', 'LCT. SAMUDRA BINTAN 88',
+  'LCT. SAMUDRA JAYA NUSANTARA', 'LCT. SANJAYA 01', 'LCT. SANJAYA 05', 'LCT. SAS 05',
+  'LCT. SJP 168 A', 'SAMUDRA BINTAN 88 TONGKANG / BARGE', 'VIRGO SEJATI 332 TONGKANG / BARGE'
+];
+
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -79,7 +92,7 @@ function App() {
       <section id="home" className="relative h-screen flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/hero.png" 
+            src="/hero.jpeg" 
             alt="Cargo Ship" 
             className="w-full h-full object-cover animate-ken-burns"
           />
@@ -293,10 +306,10 @@ function App() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Gallery Image 1 - Large spanning 2 rows/cols on large screens */}
-            <div className="group relative rounded-2xl overflow-hidden shadow-md md:col-span-2 md:row-span-2 h-64 md:h-[500px]">
-              <img src="/gallery-1.png" alt="Port Operations" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Gallery Image 1 - Large spanning 2 rows on large screens */}
+            <div className="group relative rounded-2xl overflow-hidden shadow-md h-64 md:h-80 lg:h-[536px] md:col-span-2 lg:col-span-2 lg:row-span-2">
+              <img src="/moring-boat.jpeg" alt="Port Operations" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
                 <div>
                   <h4 className="text-white font-bold text-xl mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Terminal Operations</h4>
@@ -305,35 +318,68 @@ function App() {
               </div>
             </div>
 
-            {/* Gallery Image 2 */}
-            <div className="group relative rounded-2xl overflow-hidden shadow-md h-64 md:h-[238px]">
-              <img src="/gallery-2.png" alt="Tug Boat Assisting Vessel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            {/* Gallery Image 2 - Wide landscape */}
+            <div className="group relative rounded-2xl overflow-hidden shadow-md h-64 lg:col-span-2">
+              <img src="/vessel-deck.jpeg" alt="Tug Boat Assisting Vessel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div>
-                  <h4 className="text-white font-bold text-lg mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Harbor Assistance</h4>
-                  <p className="text-slate-300 text-xs translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Tugboat coordination for safe berthing.</p>
+                  <h4 className="text-white font-bold text-lg mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Deck Barge Loaded</h4>
+                  <p className="text-slate-300 text-xs translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">with Heavy Construction Equipment</p>
                 </div>
               </div>
             </div>
 
-            {/* Gallery Image 3 */}
-            <div className="group relative rounded-2xl overflow-hidden shadow-md h-64 md:h-[238px]">
-              <img src="/gallery-3.png" alt="Ship Bridge Navigation" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            {/* Gallery Image 3 - Square */}
+            <div className="group relative rounded-2xl overflow-hidden shadow-md h-64">
+              <img src="/lct-ayu-178.jpeg" alt="Ship Bridge Navigation" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div>
-                  <h4 className="text-white font-bold text-lg mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Master Collaboration</h4>
-                  <p className="text-slate-300 text-xs translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Direct communication with vessel command.</p>
+                  <h4 className="text-white font-bold text-lg mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">The LCT AYU 178</h4>
+                  <p className="text-slate-300 text-xs translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">vessel is currently docked at the pier with its ramp door lowered.</p>
                 </div>
               </div>
             </div>
             
-            {/* Gallery Image 4 - Spans full width on mobile, 3 cols on desktop */}
-            <div className="group relative rounded-2xl overflow-hidden shadow-md h-64 md:h-80 md:col-span-2 lg:col-span-3">
-              <img src="/gallery-4.png" alt="Docked Vessel at Sunset" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+            {/* Gallery Image 4 - Square */}
+            <div className="group relative rounded-2xl overflow-hidden shadow-md h-64 md:col-span-2 lg:col-span-1">
+              <img src="/lct-harapan-perdana-99.jpeg" alt="Docked Vessel at Sunset" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div>
-                  <h4 className="text-white font-bold text-xl mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">24/7 Port Stay Management</h4>
-                  <p className="text-slate-300 text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Continuous supervision ensuring zero delays during twilight hours.</p>
+                  <h4 className="text-white font-bold text-lg mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">LCT Harapan Perdana 99</h4>
+                  <p className="text-slate-300 text-xs translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Premier Heavy-Duty Maritime Logistics Partner</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Gallery Image 5 - Square */}
+            <div className="group relative rounded-2xl overflow-hidden shadow-md h-64">
+              <img src="/lct-ayu-138.jpeg" alt="Cargo Operations" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h4 className="text-white font-bold text-lg mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">LCT AYU 138</h4>
+                  <p className="text-slate-300 text-xs translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Delivering Heavy Machinery to Any Shore.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Gallery Image 6 - Wide landscape */}
+            <div className="group relative rounded-2xl overflow-hidden shadow-md h-64 lg:col-span-2">
+              <img src="/lct-putra-jaya.jpeg" alt="Custom Clearances" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h4 className="text-white font-bold text-lg mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">24/7 Port Stay</h4>
+                  <p className="text-slate-300 text-xs translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Continuous supervision ensuring zero delays.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Gallery Image 7 - Square */}
+            <div className="group relative rounded-2xl overflow-hidden shadow-md h-64 md:col-span-2 lg:col-span-1">
+              <img src="/lct-ayu-188.jpeg" alt="Offshore Supply" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h4 className="text-white font-bold text-lg mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">LCT Ayu 188</h4>
+                  <p className="text-slate-300 text-xs translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Trusted Ship Agency in Jakarta: Handling LCT Vessels at PLTGU Priok.</p>
                 </div>
               </div>
             </div>
@@ -352,34 +398,18 @@ function App() {
               <p className="text-slate-500">From bulk carriers to specialized offshore vessels, our track record speaks for our capability.</p>
             </div>
             
-            {/* Scroller Area */}
-            <div className="lg:w-2/3 w-full relative">
-              <div className="absolute left-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
-              
-              <div className="flex overflow-hidden group py-8">
-                <div className="flex space-x-4 md:space-x-6 animate-scroll group-hover:[animation-play-state:paused] items-center">
-                  {/* Repeated for scrolling effect */}
-                  {['LCT AYU', 'TB. ABADI SAKTI', 'MV. OCEAN STAR', 'MT. GLORY MARITIME', 'SV. SEA EXPLORER', 'LCT BINTANG LAUT', 'TB. MAJU JAYA', 'MV. PACIFIC VOYAGER'].map((vessel, i) => {
-                    return (
-                      <div key={`v1-${i}`} className={`group/card relative bg-white border border-slate-200 px-6 py-4 md:px-8 md:py-5 rounded-2xl flex items-center gap-3 whitespace-nowrap shadow-sm hover:shadow-xl hover:shadow-accent-500/10 hover:border-accent-400 hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden`}>
-                        <div className="absolute top-0 right-0 w-16 h-16 bg-primary-50 rounded-bl-full -z-10 transition-transform duration-500 group-hover/card:scale-150 group-hover/card:bg-accent-50"></div>
-                        <Ship className="h-5 w-5 text-primary-300 group-hover/card:text-accent-500 group-hover/card:-rotate-12 group-hover/card:scale-110 transition-all duration-300" />
-                        <span className="font-bold tracking-wide text-sm md:text-base text-primary-900">{vessel}</span>
-                      </div>
-                    );
-                  })}
-                  {/* Duplicate set for infinite scroll */}
-                  {['LCT AYU', 'TB. ABADI SAKTI', 'MV. OCEAN STAR', 'MT. GLORY MARITIME', 'SV. SEA EXPLORER', 'LCT BINTANG LAUT', 'TB. MAJU JAYA', 'MV. PACIFIC VOYAGER'].map((vessel, i) => {
-                    return (
-                      <div key={`v2-${i}`} className={`group/card relative bg-white border border-slate-200 px-6 py-4 md:px-8 md:py-5 rounded-2xl flex items-center gap-3 whitespace-nowrap shadow-sm hover:shadow-xl hover:shadow-accent-500/10 hover:border-accent-400 hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden`}>
-                        <div className="absolute top-0 right-0 w-16 h-16 bg-primary-50 rounded-bl-full -z-10 transition-transform duration-500 group-hover/card:scale-150 group-hover/card:bg-accent-50"></div>
-                        <Ship className="h-5 w-5 text-primary-300 group-hover/card:text-accent-500 group-hover/card:-rotate-12 group-hover/card:scale-110 transition-all duration-300" />
-                        <span className="font-bold tracking-wide text-sm md:text-base text-primary-900">{vessel}</span>
-                      </div>
-                    );
-                  })}
-                </div>
+            {/* Vessels List Area */}
+            <div className="lg:w-2/3 w-full">
+              <div className="flex flex-wrap gap-1.5 md:gap-2 py-8 justify-center lg:justify-start">
+                {vesselList.map((vessel, i) => {
+                  return (
+                    <div key={`v-${i}`} className="group/card relative bg-white border border-slate-200 px-2.5 py-1.5 md:px-3 md:py-2 rounded-lg flex items-center gap-1.5 whitespace-nowrap shadow-sm hover:shadow-md hover:shadow-accent-500/10 hover:border-accent-400 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer overflow-hidden">
+                      <div className="absolute top-0 right-0 w-8 h-8 bg-primary-50 rounded-bl-full -z-10 transition-transform duration-500 group-hover/card:scale-150 group-hover/card:bg-accent-50"></div>
+                      <Ship className="h-3.5 w-3.5 text-primary-300 group-hover/card:text-accent-500 group-hover/card:-rotate-12 group-hover/card:scale-110 transition-all duration-300" />
+                      <span className="font-semibold tracking-wide text-[10px] md:text-xs text-primary-900">{vessel}</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -416,11 +446,12 @@ function App() {
               <ul className="space-y-4 text-sm md:text-base">
                 <li className="flex items-start gap-3">
                   <Map className="w-5 h-5 text-accent-500 shrink-0 mt-0.5" />
-                  <span>Jl. Yos Sudarso No. 45, Tanjung Priok, Jakarta Utara, 14320, Indonesia</span>
+                  {/* <span>Jl. Yos Sudarso No. 45, Tanjung Priok, Jakarta Utara, 14320, Indonesia</span> */}
+                  <span>Jalan Edam I No. 9, RT.4/RW.16, Tanjung Priok, KOTA JAKARTA UTARA, TANJUNG PRIOK, DKI JAKARTA, ID, 14310</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-accent-500 shrink-0" />
-                  <span>+62 812 3456 7890 (24/7 Ops)</span>
+                  <span>+62 812 1825 4709 (24/7 Ops)</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-accent-500 shrink-0" />
