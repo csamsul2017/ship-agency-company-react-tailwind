@@ -46,8 +46,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-2">
-              <Anchor className="h-8 w-8 text-primary-900" />
-              <span className="font-bold text-xl tracking-tight text-primary-900">GPI<span className="text-accent-500">.</span></span>
+              <img src="/logo.png" alt="GPI Logo" className="h-10 w-auto" />
             </div>
             
             {/* Desktop Menu */}
@@ -422,8 +421,7 @@ function App() {
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-6">
-                <Anchor className="h-8 w-8 text-accent-500" />
-                <span className="font-bold text-2xl tracking-tight text-white">GPI<span className="text-accent-500">.</span></span>
+                <img src="/logo.png" alt="GPI Logo" className="h-12 w-auto" />
               </div>
               <p className="text-slate-400 mb-8 max-w-md leading-relaxed text-sm md:text-base">
                 PT Gerbang Pelabuhan Indonesia is your dedicated partner in maritime operations. We combine local expertise with international standards to deliver unparalleled ship agency services across the Indonesian archipelago.
