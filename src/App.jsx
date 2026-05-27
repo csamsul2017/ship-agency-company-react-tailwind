@@ -548,7 +548,7 @@ function App() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-accent-500 shrink-0" />
-                  <span>ops@gbi.com</span>
+                  <span>info@gerbangpelabuhan.com</span>
                 </li>
               </ul>
             </div>
