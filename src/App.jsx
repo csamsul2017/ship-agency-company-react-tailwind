@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Anchor, Clock, MapPin, ShieldCheck, Zap, Ship, ClipboardCheck, Users, Package, Mail, Phone, Map, Menu, X, Camera, ArrowRight, Globe } from 'lucide-react';
+import { Clock, MapPin, ShieldCheck, Zap, Ship, ClipboardCheck, Users, Package, Mail, Phone, Map, Menu, X, Camera, ArrowRight, Globe } from 'lucide-react';
 import './App.css';
 import { translations } from './translations';
 
@@ -66,7 +66,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-2">
-              <img src="/logo.png" alt="GPI Logo" className="h-10 w-auto" />
+              <img src="/logo.webp" alt="GPI Logo" className="h-10 w-auto" />
             </div>
 
             {/* Desktop Menu */}
@@ -105,6 +105,7 @@ function App() {
               </button>
               <button onClick={toggleMobileMenu} className="text-slate-600 hover:text-primary-900 focus:outline-none p-2">
                 {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                <span className="sr-only">{t.nav.btnMenu}</span>
               </button>
             </div>
           </div>
@@ -140,7 +141,7 @@ function App() {
       {/* Hero Section */}
       <section id="home" className="relative h-screen flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/hero.jpeg" alt="Cargo Ship" className="w-full h-full object-cover animate-ken-burns" />
+          <img src="/hero.webp" alt="Cargo Ship" className="w-full h-full object-cover animate-ken-burns" />
           <div className="absolute inset-0 bg-primary-950/70"></div>
         </div>
 
@@ -182,18 +183,11 @@ function App() {
                 <div className="relative bg-white p-2.5 rounded-[2rem] shadow-2xl group">
                   <div className="relative rounded-[1.5rem] overflow-hidden aspect-[4/5] bg-slate-100">
                     <img
-                      src="/ceo.jepg"
+                      src="/ceo.webp"
                       alt="Tirza Aprilina, S.Tr., M.M."
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={e => {
-                        // Fallbacks in case of typos
-                        if (e.target.src.includes('.jepg')) {
-                          e.target.src = '/ceo.jpeg';
-                        } else if (e.target.src.includes('.jpeg')) {
-                          e.target.src = '/ceo.jpg';
-                        } else {
-                          e.target.src = 'https://ui-avatars.com/api/?name=Tirza+Aprilina&background=0D8ABC&color=fff&size=256';
-                        }
+                        e.target.src = 'https://ui-avatars.com/api/?name=Tirza+Aprilina&background=0D8ABC&color=fff&size=256';
                       }}
                     />
                     {/* Gradient Overlay for Text Visibility */}
@@ -382,7 +376,7 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Gallery Image 1 - Large spanning 2 rows on large screens */}
             <div className="group relative rounded-2xl overflow-hidden shadow-md h-64 md:h-80 lg:h-[536px] md:col-span-2 lg:col-span-2 lg:row-span-2">
-              <img src="/moring-boat.jpeg" alt="Port Operations" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src="/moring-boat.webp" alt="Port Operations" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
                 <div>
                   <h4 className="text-white font-bold text-xl mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{t.gallery.g1Title}</h4>
@@ -393,7 +387,7 @@ function App() {
 
             {/* Gallery Image 2 - Wide landscape */}
             <div className="group relative rounded-2xl overflow-hidden shadow-md h-64 lg:col-span-2">
-              <img src="/vessel-deck.jpeg" alt="Tug Boat Assisting Vessel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src="/vessel-deck.webp" alt="Tug Boat Assisting Vessel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div>
                   <h4 className="text-white font-bold text-lg mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{t.gallery.g2Title}</h4>
@@ -404,7 +398,7 @@ function App() {
 
             {/* Gallery Image 3 - Square */}
             <div className="group relative rounded-2xl overflow-hidden shadow-md h-64">
-              <img src="/lct-ayu-178.jpeg" alt="Ship Bridge Navigation" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src="/lct-ayu-178.webp" alt="Ship Bridge Navigation" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div>
                   <h4 className="text-white font-bold text-lg mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{t.gallery.g3Title}</h4>
@@ -415,7 +409,7 @@ function App() {
 
             {/* Gallery Image 4 - Square */}
             <div className="group relative rounded-2xl overflow-hidden shadow-md h-64 md:col-span-2 lg:col-span-1">
-              <img src="/lct-harapan-perdana-99.jpeg" alt="Docked Vessel at Sunset" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src="/lct-harapan-perdana-99.webp" alt="Docked Vessel at Sunset" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div>
                   <h4 className="text-white font-bold text-lg mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{t.gallery.g4Title}</h4>
@@ -426,7 +420,7 @@ function App() {
 
             {/* Gallery Image 5 - Square */}
             <div className="group relative rounded-2xl overflow-hidden shadow-md h-64">
-              <img src="/lct-ayu-138.jpeg" alt="Cargo Operations" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src="/lct-ayu-138.webp" alt="Cargo Operations" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div>
                   <h4 className="text-white font-bold text-lg mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{t.gallery.g5Title}</h4>
@@ -437,7 +431,7 @@ function App() {
 
             {/* Gallery Image 6 - Wide landscape */}
             <div className="group relative rounded-2xl overflow-hidden shadow-md h-64 lg:col-span-2">
-              <img src="/lct-putra-jaya.jpeg" alt="Custom Clearances" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src="/lct-putra-jaya.webp" alt="Custom Clearances" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div>
                   <h4 className="text-white font-bold text-lg mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{t.gallery.g6Title}</h4>
@@ -448,7 +442,7 @@ function App() {
 
             {/* Gallery Image 7 - Square */}
             <div className="group relative rounded-2xl overflow-hidden shadow-md h-64 md:col-span-2 lg:col-span-1">
-              <img src="/lct-ayu-188.jpeg" alt="Offshore Supply" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src="/lct-ayu-188.webp" alt="Offshore Supply" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <div>
                   <h4 className="text-white font-bold text-lg mb-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{t.gallery.g7Title}</h4>

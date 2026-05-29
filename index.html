@@ -6,33 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PT. Gerbang Pelabuhan Indonesia | Sistem & Informasi Pelabuhan Indonesia</title>
     <meta name="description" content="PT. Gerbang Pelabuhan Indonesia menyediakan sistem dan informasi pelabuhan terpercaya di Indonesia." />
-  </head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GT4V26SKRV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'G-GT4V26SKRV');
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Gerbang Pelabuhan Indonesia",
-      "url": "https://gerbangpelabuhan.com",
-      "logo": "https://gerbangpelabuhan.com/logo.png",
-      "sameAs": ["https://linkedin.com/company/gerbangpelabuhan"],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "ID"
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GT4V26SKRV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
-    }
-  </script>
+      gtag('js', new Date());
+
+      gtag('config', 'G-GT4V26SKRV');
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Gerbang Pelabuhan Indonesia",
+        "url": "https://gerbangpelabuhan.com",
+        "logo": "https://gerbangpelabuhan.com/logo.png",
+        "sameAs": ["https://linkedin.com/company/gerbangpelabuhan"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "ID"
+        }
+      }
+    </script>
+  </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <style>
+        .initial-loader-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          background-color: #f8fafc;
+          font-family: 'Inter', system-ui, sans-serif;
+        }
+        .initial-loader {
+          width: 48px;
+          height: 48px;
+          border: 4px solid #e2e8f0;
+          border-bottom-color: #06b6d4;
+          border-radius: 50%;
+          display: inline-block;
+          box-sizing: border-box;
+          animation: rotation 1s linear infinite;
+          margin-bottom: 16px;
+        }
+        @keyframes rotation {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        .initial-loader-text {
+          color: #0b1b3d;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 2px;
+        }
+      </style>
+      <div class="initial-loader-container">
+        <span class="initial-loader"></span>
+        <div class="initial-loader-text">LOAD...</div>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
